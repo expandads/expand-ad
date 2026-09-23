@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  < charset="utf-8" />
-  < name="viewport" content="width=device-width, initial-scale=1" />
-  < name="theme-color" content="#050505" />
-  < name="description" content="expand.ad — e-commerce, redesign e experiências digitais premium para marcas que tratam performance, tecnologia e posicionamento como parte do mesmo sistema." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="expand.ad — e-commerce, redesign e experiências digitais premium para marcas que tratam performance, tecnologia e posicionamento como parte do mesmo sistema." />
   <title>expand.ad — E-commerce, redesign e experiências digitais.</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,16 +26,31 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
+    }
     body {
       margin: 0;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      position: relative;
       background: var(--paper);
       color: var(--ink);
       font-family: var(--sans);
       font-size: 15px;
-      line-height: 1.45;
+      line-height: 1.5;
       overflow-x: hidden;
+      overflow-x: clip;
+      overscroll-behavior-x: none;
+      touch-action: pan-y;
     }
+    main, section, nav, footer { width: 100%; max-width: 100%; min-width: 0; }
     body.intro-lock { overflow: hidden; }
     ::selection { background: #0a0a0a; color: #fff; }
 
@@ -440,48 +455,7 @@
       filter:grayscale(1) brightness(0) invert(1);
     }
 
-    /* METRICS */
-    .metrics {
-      padding: clamp(78px, 8vw, 120px) 0;
-      background: #fff;
-    }
-    .metrics-head {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 40px;
-      margin-bottom: 42px;
-    }
-    .metrics-head .serif {
-      font-size: clamp(36px, 4vw, 64px);
-      line-height: .95;
-    }
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--line);
-    }
-    .metric {
-      padding: 35px 30px 0 0;
-      min-height: 190px;
-      border-right: 1px solid var(--line);
-    }
-    .metric + .metric { padding-left: 30px; }
-    .metric:last-child { border-right: 0; }
-    .metric strong {
-      display: block;
-      font-family: var(--sans);
-      font-weight: 600;
-      font-size: clamp(72px, 8vw, 120px);
-      line-height: .83;
-      letter-spacing: -.06em;
-    }
-    .metric span {
-      display: block;
-      max-width: 260px;
-      margin-top: 28px;
-      color: #6f6f6f;
-      font-size: 11px;
-    }
+    /* CASES / BENTO */
 
     /* CASES / BENTO */
     .cases {
@@ -541,7 +515,7 @@
       inset:0;
       background:linear-gradient(to top, rgba(0,0,0,.48), transparent 45%);
     }
-    .case- {
+    .case-meta {
       position:absolute;
       left:16px;
       right:16px;
@@ -705,7 +679,7 @@
       object-fit:contain;
       display:block;
     }
-    .platform-logo.,
+    .platform-logo,
     .platform-logo.google { height:34px; }
     .extra-service-icons.platforms { gap:18px; }
     .igchat-mark {
@@ -802,7 +776,7 @@
       object-position:center center;
     }
     .credential.behance .credential-logo { max-height:88px; }
-    .credential. .credential-logo { max-height:68px; }
+    .credential.shopify .credential-logo { max-height:68px; }
     .credential.nuvemshop .credential-logo {
       max-height:72px;
       filter:brightness(0);
@@ -888,6 +862,84 @@
     .dock-email { justify-content:center;font-size:10px; }
     .dock-right { gap:20px; }
 
+
+    /* TYPE SYSTEM / RESPONSIVE STABILITY */
+    :root {
+      --type-hero: clamp(64px, 8.3vw, 138px);
+      --type-section: clamp(48px, 5.2vw, 80px);
+      --type-detail: clamp(40px, 4.5vw, 68px);
+      --type-card: clamp(28px, 2.4vw, 38px);
+      --type-body-lg: clamp(16px, 1.15vw, 19px);
+      --type-body: 13px;
+      --type-small: 11px;
+    }
+
+    .wrap,
+    .hero-content,
+    .navbar,
+    .manifesto-grid,
+    .repository-head,
+    .repository-shell,
+    .brands-layout,
+    .bento,
+    .testimonial,
+    .other-services-layout,
+    .other-services-grid,
+    .credentials-head,
+    .credential-grid,
+    .footer-dock,
+    .repo-tree,
+    .repo-detail,
+    .brand-panel,
+    .brand-grid { min-width: 0; }
+
+    .hero h1 { font-size: var(--type-hero); line-height: .88; }
+
+    .manifesto-title,
+    .repository-title,
+    .brands-copy h2,
+    .cases-head h2,
+    .testimonial-title,
+    .other-services-intro h2,
+    .credentials-head h2,
+    .final-center h2 {
+      font-size: var(--type-section);
+      line-height: .94;
+      letter-spacing: -.05em;
+    }
+
+    .repo-detail h3 { font-size: var(--type-detail); line-height: .94; }
+    .extra-service-card h3 { font-size: var(--type-card); line-height: 1; }
+
+    .hero-sub,
+    .manifesto-copy p,
+    .repo-detail p,
+    .testimonial blockquote {
+      font-size: var(--type-body-lg);
+      line-height: 1.5;
+      letter-spacing: -.025em;
+    }
+
+    .brands-copy p,
+    .other-services-intro p,
+    .extra-service-card p,
+    .final-center p {
+      font-size: var(--type-body);
+      line-height: 1.6;
+    }
+
+    .credentials-head p,
+    .repo-file,
+    .btn,
+    .nav-cta,
+    .repo-link,
+    .extra-service-link,
+    .testimonial cite,
+    .case-title,
+    .case-label { font-size: var(--type-small); }
+
+    img, svg, canvas { max-width: 100%; }
+
     /* REVEALS */
     .reveal {
       opacity:0;
@@ -897,6 +949,12 @@
     .reveal.in { opacity:1;transform:none; }
 
     @media (max-width: 980px) {
+      :root {
+        --type-hero: clamp(54px, 11vw, 92px);
+        --type-section: clamp(42px, 8vw, 62px);
+        --type-detail: clamp(36px, 7vw, 52px);
+        --type-card: clamp(28px, 5vw, 36px);
+      }
       .navbar { grid-template-columns:1fr auto; }
       .nav-links { display:none; }
       .hero-bottom, .manifesto-grid, .repository-head, .repository-shell, .brands-layout, .other-services-layout { grid-template-columns:1fr; }
@@ -907,10 +965,6 @@
       .brand-panel { min-height:520px; }
       .brand-grid { grid-template-columns:repeat(3,1fr); }
       .other-services-intro { position:static; }
-      .metrics-head { grid-template-columns:1fr; }
-      .metrics-grid { grid-template-columns:1fr; }
-      .metric,.metric + .metric { border-right:0;border-bottom:1px solid var(--line);padding:32px 0;min-height:auto; }
-      .metric:last-child { border-bottom:0; }
       .bento { grid-template-columns:1fr; }
       .case-card,.case-card.tall { min-height:70svh;grid-row:auto; }
       .testimonial { grid-template-columns:120px 1fr; }
@@ -923,20 +977,33 @@
     }
 
     @media (max-width: 640px) {
-      :root { --pad: 18px; }
+      :root {
+        --pad: 18px;
+        --type-hero: clamp(46px, 13vw, 64px);
+        --type-section: clamp(36px, 10vw, 48px);
+        --type-detail: clamp(34px, 9vw, 44px);
+        --type-card: 28px;
+        --type-body-lg: 16px;
+        --type-body: 13px;
+        --type-small: 10px;
+      }
 
-      .wrap, .navbar, .hero-content { width: calc(100% - 32px); }
+      html, body { width:100%; max-width:100%; overflow-x:hidden; overflow-x:clip; }
+      body { touch-action:pan-y; }
+      .wrap, .navbar, .hero-content { width: calc(100% - 32px); max-width:calc(100% - 32px); }
+      .hero, .repository, .brands, .cases, .testimonials, .other-services, .credentials, .final { overflow-x:clip; }
       .navbar { padding-top:18px; }
+      .repository-shell, .repo-tree, .repo-detail, .brand-panel, .other-services-grid, .credential-grid { width:100%; max-width:100%; min-width:0; }
+      .repo-trigger, .repo-file, .repo-bar, .repo-root { min-width:0; overflow-wrap:anywhere; }
+      .hero-actions, .repo-detail-foot, .credentials-head, .contact-row { max-width:100%; }
+      .case-card, .case-card.tall { width:100%; max-width:100%; }
       .brand { font-size:18px; }
       .nav-cta { padding:11px 14px; }
       .hero-content { padding-top:80px; }
       .hero-kicker span:last-child { display:none; }
-      .hero h1 { font-size:clamp(52px,16vw,88px); }
       .hero-bottom { margin-top:38px;gap:30px; }
       .btn { width:100%; }
-      .manifesto-title { font-size:clamp(58px,18vw,95px); }
       .section-top { align-items:start;flex-direction:column; }
-      .metrics-head { margin-bottom:35px; }
       .cases-head { align-items:start;flex-direction:column; }
       .case-card,.case-card.tall { min-height:58svh; }
       .testimonial-title { text-align:left; }
@@ -960,7 +1027,6 @@
       .dock-right { order:initial; }
       .intro-word { font-size:clamp(62px,18vw,110px); }
       #intro.is-expanded .intro-gap { width:clamp(54px,18vw,112px); }
-      .repository-title, .brands-copy h2 { font-size:clamp(54px,16vw,88px); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1160,7 +1226,7 @@
           <a class="case-card tall show-full reveal" href="https://wa.me/71997132736" target="_blank" rel="noopener" aria-label="Projeto Linda Bayan">
             <img loading="lazy" src="assets/projects/linda-bayan.webp" alt="Projeto digital Linda Bayan">
             <div class="case-title">Linda Bayan</div>
-            <div class="case-">
+            <div class="case-meta">
               <span class="case-label">Portfólio / Experiência</span>
               <span class="case-arrow">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M8 7h9v9"/></svg>
@@ -1171,7 +1237,7 @@
           <a class="case-card show-full reveal" href="https://wa.me/71997132736" target="_blank" rel="noopener" aria-label="Projeto Riches Jewelry">
             <img loading="lazy" src="assets/projects/riches-jewelry.webp" alt="Projeto de e-commerce Riches Jewelry">
             <div class="case-title">Riches Jewelry</div>
-            <div class="case-">
+            <div class="case-meta">
               <span class="case-label">E-commerce</span>
               <span class="case-arrow">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M8 7h9v9"/></svg>
@@ -1182,7 +1248,7 @@
           <a class="case-card show-full reveal" href="https://wa.me/71997132736" target="_blank" rel="noopener" aria-label="Projeto Têre Studio">
             <img loading="lazy" src="assets/projects/tere-studio.webp" alt="Projeto de e-commerce Têre Studio">
             <div class="case-title">Têre Studio</div>
-            <div class="case-">
+            <div class="case-meta">
               <span class="case-label">E-commerce / Redesign</span>
               <span class="case-arrow">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 17L17 7M8 7h9v9"/></svg>
@@ -1274,7 +1340,7 @@
               <img class="credential-logo" src="assets/awards/behance-featured.svg" alt="Reconhecimento Behance" loading="lazy">
             </div>
           </div>
-          <div class="credential ">
+          <div class="credential shopify">
             <span>Commerce / Partnership</span>
             <div class="credential-logo-wrap">
               <img class="credential-logo" src="assets/awards/premiossites (1).png" alt="Shopify Partner" loading="lazy">
