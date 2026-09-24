@@ -689,7 +689,7 @@
       transition:transform .2s ease;
     }
     .other-services-cta:hover { transform:translateY(-2px); }
-    .other-services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .other-services-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
     .extra-service-card {
       min-height:355px;
       border-radius:22px;
@@ -717,6 +717,15 @@
       object-fit:contain;
       object-position:left center;
       display:block;
+    }
+    .design-service-icon {
+      width:46px;
+      height:46px;
+      object-fit:contain;
+      object-position:left center;
+      display:block;
+      filter:brightness(0) invert(1);
+      opacity:.96;
     }
     .extra-service-card h3 {
       margin:18px 0 0;
@@ -1227,7 +1236,7 @@
       <div class="wrap brands-layout">
         <div class="brands-copy reveal">
           <div>
-            <div class="eyebrow" style="color:rgba(255,255,255,.56); margin-bottom:26px;">SELECTED RELATIONSHIPS / 01—14</div>
+            <div class="eyebrow" style="color:rgba(255,255,255,.56); margin-bottom:26px;">SELECTED RELATIONSHIPS / 01—16</div>
             <h2><strong>Marcas que</strong><br>passaram por aqui.</h2>
           </div>
           <p>Marcas de diferentes mercados, unidas por uma exigência em comum: experiências digitais construídas para elevar percepção, operação e resultado.</p>
@@ -1248,6 +1257,8 @@
             <div class="brand-mark"><img loading="lazy" src="assets/logos/nevoka.svg" alt="Nevoka"></div>
             <div class="brand-mark"><img loading="lazy" src="assets/logos/impulce.svg" alt="Impulce"></div>
             <div class="brand-mark"><img loading="lazy" src="assets/logos/18_11_2_293_Group3995(1).svg" alt="Marca parceira"></div>
+            <div class="brand-mark"><img loading="lazy" src="assets/logos/unifat.webp" alt="UNIFAT"></div>
+            <div class="brand-mark"><img loading="lazy" src="assets/logos/uninassau.webp" alt="UNINASSAU"></div>
           </div>
         </div>
       </div>
@@ -1305,6 +1316,39 @@
         </div>
       </div>
     </section>
+
+    <section class="testimonials" aria-label="Depoimentos">
+      <div class="wrap">
+        <h2 class="testimonial-title reveal"><strong>Depoimentos.</strong></h2>
+
+        <div class="testimonial-list">
+          <figure class="testimonial reveal">
+            <div class="avatar-wrap"><img class="avatar" src="assets/testimonials/profile-01.webp" alt="Imagem ilustrativa para depoimento"></div>
+            <figcaption class="testimonial-copy">
+              <blockquote>“O projeto ganhou clareza, consistência e uma percepção muito mais premium. A nova experiência deixou a operação mais preparada para crescer sem perder identidade.”</blockquote>
+              <cite>Júlio Neves - Peças automativas</cite>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal">
+            <div class="avatar-wrap"><img class="avatar" src="assets/testimonials/profile-02.webp" alt="Imagem ilustrativa para depoimento"></div>
+            <figcaption class="testimonial-copy">
+              <blockquote>“A entrega foi além de uma mudança visual. Navegação, hierarquia e jornada passaram a funcionar como parte da estratégia comercial da marca.”</blockquote>
+              <cite>Érica Borges - Vestuário</cite>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial reveal">
+            <div class="avatar-wrap"><img class="avatar" src="assets/testimonials/profile-03.webp" alt="Imagem ilustrativa para depoimento"></div>
+            <figcaption class="testimonial-copy">
+              <blockquote>“Do conceito à execução, cada decisão teve intenção. O resultado foi uma presença digital mais madura, rápida e coerente com o posicionamento que queríamos sustentar.”</blockquote>
+              <cite>Saamila Aquila - Vestuário</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section class="other-services" id="outros-servicos" aria-label="Outros serviços">
       <div class="wrap other-services-layout">
         <div class="other-services-intro reveal">
@@ -1319,7 +1363,7 @@
             <div>
               <div class="extra-service-icons platforms" aria-label="Plataformas de mídia paga">
                 <img class="platform-logo " src="assets/platforms/meta.webp" alt="">
-                <img class="platform-logo google" src="assets/platforms/google-ads.webp" alt="Google Ads">
+                <img class="platform-logo google" src="assets/platforms/google-ads.png" alt="Google Ads">
               </div>
               <h3>Mídia paga</h3>
               <p>Planejamento, configuração e gestão de campanhas com foco em aquisição, eficiência e escala. Mídia tratada como parte da estratégia do e-commerce — não como uma frente isolada.</p>
@@ -1332,8 +1376,19 @@
               <div class="extra-service-icons">
                 <img class="igchat-mark" src="assets/igchat/igchat.webp" alt="IGChat">
               </div>
-              <h3>Mensageria</h3>
+              <h3>Automação Conversacional</h3>
               <p>Automações para Instagram com fluxos de DM, respostas a comentários, palavras-chave, captação e relacionamento. Com o IGChat, interações viram jornadas automatizadas sem perder o contexto da marca.</p>
+            </div>
+            <a class="extra-service-link" href="https://wa.me/71997132736" target="_blank" rel="noopener">Saber mais <span>↗</span></a>
+          </article>
+
+          <article class="extra-service-card reveal">
+            <div>
+              <div class="extra-service-icons">
+                <img class="design-service-icon" src="assets/services/design-icon.webp" alt="Design">
+              </div>
+              <h3>Design &amp; Campanhas</h3>
+              <p>Identidade visual, direção de arte e campanhas visuais desenvolvidas para fortalecer percepção de marca e manter consistência em cada ponto de contato.</p>
             </div>
             <a class="extra-service-link" href="https://wa.me/71997132736" target="_blank" rel="noopener">Saber mais <span>↗</span></a>
           </article>
