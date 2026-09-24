@@ -975,6 +975,45 @@
     .repo-detail h3 { font-size: var(--type-detail); line-height: .94; }
     .extra-service-card h3 { font-size: var(--type-card); line-height: 1; }
 
+    /* Desktop refinement — seção Outras camadas */
+    @media (min-width: 981px) {
+      .other-services-layout {
+        grid-template-columns:minmax(350px,.9fr) minmax(0,1.5fr);
+        gap:clamp(58px,5vw,82px);
+      }
+
+      .other-services-intro {
+        max-width:390px;
+      }
+
+      .other-services-intro h2 {
+        max-width:390px;
+        font-size:clamp(50px,4vw,64px);
+        line-height:1.04;
+        letter-spacing:-.045em;
+        text-wrap:balance;
+      }
+
+      .other-services-intro p {
+        max-width:380px;
+      }
+
+      .other-services-grid {
+        gap:18px;
+      }
+
+      .extra-service-card {
+        padding:30px 24px 24px;
+      }
+
+      .extra-service-card h3 {
+        font-size:clamp(24px,1.55vw,29px);
+        line-height:1.08;
+        letter-spacing:-.035em;
+        text-wrap:balance;
+      }
+    }
+
     .hero-sub,
     .manifesto-copy p,
     .repo-detail p,
