@@ -640,114 +640,140 @@
     .other-services {
       background:#050505;
       color:#fff;
-      padding:clamp(82px,8vw,124px) 0;
+      padding:clamp(86px,7vw,118px) 0;
     }
     .other-services-layout {
       display:grid;
-      grid-template-columns:.72fr 1.28fr;
-      gap:clamp(48px,7vw,110px);
+      grid-template-columns:minmax(300px,.82fr) minmax(0,1.38fr);
+      gap:clamp(48px,5vw,78px);
       align-items:start;
     }
-    .other-services-intro { position:sticky; top:28px; }
+    .other-services-intro {
+      position:sticky;
+      top:32px;
+      max-width:440px;
+      padding-top:4px;
+    }
     .other-services-intro .micro-badge {
       display:inline-flex;
-      padding:7px 10px;
+      align-items:center;
+      justify-content:center;
+      padding:8px 12px;
       border-radius:999px;
-      background:rgba(255,255,255,.08);
-      color:rgba(255,255,255,.72);
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.07);
+      color:rgba(255,255,255,.68);
       font-size:9px;
       font-weight:600;
-      margin-bottom:24px;
+      letter-spacing:.04em;
+      margin-bottom:26px;
     }
     .other-services-intro h2 {
       margin:0;
-      max-width:520px;
-      font-size:clamp(48px,5.6vw,88px);
-      line-height:.9;
+      max-width:430px;
+      font-size:clamp(52px,4.7vw,76px);
+      line-height:.92;
       letter-spacing:-.055em;
       font-weight:300;
+      text-wrap:balance;
     }
     .other-services-intro h2 strong { font-weight:650; }
     .other-services-intro p {
-      margin:26px 0 0;
-      max-width:430px;
-      color:rgba(255,255,255,.62);
+      margin:28px 0 0;
+      max-width:410px;
+      color:rgba(255,255,255,.58);
       font-size:13px;
-      line-height:1.55;
+      line-height:1.7;
     }
     .other-services-cta {
-      margin-top:28px;
+      margin-top:30px;
       display:inline-flex;
       align-items:center;
-      gap:18px;
-      padding:13px 16px;
-      border-radius:9px;
+      gap:20px;
+      padding:14px 17px;
+      border-radius:10px;
       background:#fff;
       color:#050505;
       font-size:10px;
       font-weight:600;
-      transition:transform .2s ease;
+      transition:transform .2s ease, background .2s ease;
     }
-    .other-services-cta:hover { transform:translateY(-2px); }
-    .other-services-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .other-services-cta:hover { transform:translateY(-2px); background:#f3f3f3; }
+
+    .other-services-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      align-items:stretch;
+      min-width:0;
+    }
     .extra-service-card {
-      min-height:355px;
+      min-width:0;
+      min-height:500px;
       border-radius:22px;
-      background:#111;
-      padding:clamp(26px,3vw,40px);
+      background:#101010;
+      padding:30px 26px 24px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.09);
+      overflow:hidden;
     }
-    .extra-service-icons { display:flex; align-items:center; min-height:52px; }
-    .platform-logo {
-      height:34px;
-      width:auto;
-      max-width:160px;
-      object-fit:contain;
-      display:block;
+    .extra-service-card > div { min-width:0; }
+    .extra-service-icons {
+      height:42px;
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:28px;
+      min-width:0;
     }
+    .extra-service-icons.platforms { gap:16px; }
     .platform-logo,
-    .platform-logo.google { height:34px; }
-    .extra-service-icons.platforms { gap:18px; }
-    .igchat-mark {
-      width:94px;
-      height:40px;
-      object-fit:contain;
-      object-position:left center;
-      display:block;
-    }
+    .igchat-mark,
     .design-service-icon {
-      width:46px;
-      height:46px;
+      display:block;
+      width:auto;
+      max-width:100%;
       object-fit:contain;
       object-position:left center;
-      display:block;
+      flex:0 0 auto;
+    }
+    .platform-logo { height:27px; max-width:110px; }
+    .platform-logo.google { height:25px; max-width:118px; }
+    .igchat-mark { height:30px; max-width:118px; }
+    .design-service-icon {
+      width:32px;
+      height:32px;
       filter:brightness(0) invert(1);
       opacity:.96;
     }
     .extra-service-card h3 {
-      margin:18px 0 0;
-      font-size:clamp(28px,2.8vw,44px);
-      line-height:.95;
+      margin:0;
+      max-width:100%;
+      font-size:clamp(25px,1.8vw,32px);
+      line-height:1.04;
       letter-spacing:-.045em;
-      font-weight:500;
+      font-weight:600;
+      overflow-wrap:normal;
+      word-break:normal;
+      hyphens:none;
+      text-wrap:balance;
     }
     .extra-service-card p {
-      margin:20px 0 0;
-      color:rgba(255,255,255,.68);
-      font-size:13px;
-      line-height:1.55;
-      max-width:430px;
+      margin:22px 0 0;
+      color:rgba(255,255,255,.62);
+      font-size:12px;
+      line-height:1.72;
+      max-width:290px;
     }
     .extra-service-link {
       display:inline-flex;
       align-items:center;
       gap:10px;
-      margin-top:34px;
-      font-size:11px;
-      color:#4438ff;
+      margin-top:32px;
+      font-size:10px;
+      color:#6952ff;
       font-weight:600;
     }
 
@@ -1210,7 +1236,7 @@
               </div>
             </div>
             <div class="repo-detail-foot">
-              <span class="repo-index" id="repoIndex">01 / 04</span>
+              <span class="repo-index" id="repoIndex">01 / 03</span>
               <a class="repo-link" href="#casos">Ver projetos <span>↗</span></a>
             </div>
           </div>
@@ -1316,7 +1342,7 @@
             <div>
               <div class="extra-service-icons platforms" aria-label="Plataformas de mídia paga">
                 <img class="platform-logo " src="assets/platforms/meta.webp" alt="">
-                <img class="platform-logo google" src="assets/platforms/google-ads.webp" alt="Google Ads">
+                <img class="platform-logo google" src="assets/platforms/google-ads.png" alt="Google Ads">
               </div>
               <h3>Mídia paga</h3>
               <p>Planejamento, configuração e gestão de campanhas com foco em aquisição, eficiência e escala. Mídia tratada como parte da estratégia do e-commerce — não como uma frente isolada.</p>
@@ -1447,28 +1473,21 @@
           title: '<strong>E-</strong>commerce',
           description: 'Operações digitais desenhadas para unir posicionamento, experiência de compra e eficiência comercial. Arquitetura, interface, integrações e conversão tratadas como um único sistema.',
           tags: ['STOREFRONT','UX COMMERCE','INTEGRATIONS','CONVERSION'],
-          index: '01 / 04'
-        },
-        redesign: {
-          path: 'expand / redesign / README.md',
-          title: '<strong>Re</strong>design',
-          description: 'Reestruturações para operações que já vendem, mas precisam evoluir percepção, navegação e performance. O objetivo não é apenas mudar a estética — é reposicionar toda a experiência.',
-          tags: ['AUDIT','VISUAL SYSTEM','NAVIGATION','PERFORMANCE'],
-          index: '02 / 04'
+          index: '01 / 03'
         },
         websites: {
           path: 'expand / websites / README.md',
           title: '<strong>Sites</strong><br>Institucionais',
           description: 'Ambientes digitais para marcas que precisam apresentar posicionamento, produto e autoridade com uma experiência clara, responsiva e tecnicamente consistente.',
           tags: ['INSTITUTIONAL','PORTFOLIO','CORPORATE','RESPONSIVE'],
-          index: '03 / 04'
+          index: '02 / 03'
         },
         'landing-pages': {
           path: 'expand / landing-pages / README.md',
           title: '<strong>Landing</strong><br>Pages',
           description: 'Estruturas pontuais para campanhas e lançamentos que exigem foco, velocidade e uma jornada objetiva da mensagem à ação.',
           tags: ['CAMPAIGN','UI DESIGN','DEVELOPMENT'],
-          index: '04 / 04'
+          index: '03 / 03'
         }
       };
 
