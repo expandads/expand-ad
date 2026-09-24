@@ -987,8 +987,18 @@
       .brand-panel { min-height:520px; }
       .brand-grid { grid-template-columns:repeat(3,1fr); }
       .other-services-intro { position:static; }
-      .bento { grid-template-columns:1fr; }
-      .case-card,.case-card.tall { min-height:70svh;grid-row:auto; }
+
+      /* Projetos: a partir de tablet/mobile, usa o bento editorial */
+      .cases .bento { display:none; }
+      .mobile-project-bento {
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        width:100%;
+        max-width:100%;
+      }
+      .mobile-project-tile { width:100%; max-width:100%; }
+
       .testimonial { grid-template-columns:120px 1fr; }
       .avatar-wrap { width:100px;height:100px; }
       .avatar { width:76px;height:76px; }
@@ -1028,18 +1038,9 @@
       .section-top { align-items:start;flex-direction:column; }
       .cases-head { align-items:start;flex-direction:column; }
 
-      /* Projects: mobile-only editorial bento */
+      /* Projects: bento compacto no celular */
       .cases-head { margin-bottom:24px; }
-      .cases .bento { display:none; }
-      .mobile-project-bento {
-        display:grid;
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:8px;
-        width:100%;
-        max-width:100%;
-      }
-      .mobile-project-tile { width:100%; max-width:100%; }
-      .case-card,.case-card.tall { min-height:58svh; }
+      .mobile-project-bento { gap:8px; }
       .testimonial-title { text-align:left; }
       .testimonial { grid-template-columns:1fr;padding:28px 0; }
       .avatar-wrap { margin-left:10px; }
